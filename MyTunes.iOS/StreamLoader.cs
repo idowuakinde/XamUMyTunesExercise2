@@ -1,12 +1,11 @@
 ﻿using System;
 using System.IO;
-using MyTunes.Shared;
 
 namespace MyTunes
 {
     public class StreamLoader : IStreamLoader
     {
-        public StreamLoader()
+        public StreamLoader(MyTunesViewController myTunesViewController)
         {
         }
 

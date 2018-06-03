@@ -11,6 +11,8 @@ namespace MyTunes
 	{
 		const string Filename = "songs.json";
 
+        public static IStreamLoader Loader { get; set; }
+
 		public static async Task<IEnumerable<Song>> Load()
 		{
 			using (var reader = new StreamReader(OpenData())) {
@@ -21,7 +23,12 @@ namespace MyTunes
 		private static Stream OpenData()
 		{
 			// TODO: add code to open file here.
-			return null;
+            if (Loader == null)
+            {
+                throw new Exception("You must set the platform Loader before calling the Load() method.");
+            }
+
+            return Loader.GetStreamForFilename(Filename);
 		}
 	}
 }

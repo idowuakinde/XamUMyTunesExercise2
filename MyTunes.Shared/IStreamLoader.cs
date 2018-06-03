@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace MyTunes.Shared
+namespace MyTunes
 {
     public interface IStreamLoader
     {
